@@ -1,4 +1,4 @@
-import { HStack, Icon, Text } from "@chakra-ui/react";
+import { HStack, Icon } from "@chakra-ui/react";
 import { Platform } from "../hooks/useGames";
 import {
   FaWindows,
@@ -12,7 +12,7 @@ import {
 import { MdPhone} from 'react-icons/md'
 import { SiNintendo } from 'react-icons/si'
 import { BsGlobe } from 'react-icons/bs'
-import { ReactElement } from "react";
+ 
 import { IconType } from "react-icons";
 interface Props {
   platforms: Platform[];
@@ -32,9 +32,9 @@ export default function PlatformIconList({ platforms }: Props) {
         android: FaAndroid
     }
   return (
-    <HStack display={'flex'} justifyContent={'start'} gap={'5px'} mt={3} >
+    <HStack display={'flex'} justifyContent={'start'} gap={'5px'}  >
       {platforms.map((platform) => (
-          <Icon width={7} h={7} as={iconMap[platform.slug]} key={platform.id} color={'gray-500'} />
+          <Icon width={5} h={5} as={iconMap[platform.slug]} key={platform.id} color={'gray.500'} />
       ))}
     </HStack>
   );

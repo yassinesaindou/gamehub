@@ -8,7 +8,8 @@ export interface Platform {
   slug: string;
 }
 export interface Game {
-  id: number;
+    id: number;
+    metacritic:number,
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
