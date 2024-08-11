@@ -5,6 +5,7 @@ import CrtiticScore from "./CrtiticScore";
 import GameCardContainer from "./GameCardContainer";
 
 interface Props {
+  
   game: Game;
 }
 export default function GameCard({ game }: Props) {
