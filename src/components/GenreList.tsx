@@ -8,12 +8,11 @@ import {
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenre";
 
-interface Props{
-  onSelectGenre :(genre:Genre) => void
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
-export default function GenreList({ onSelectGenre }: Props) {
-  
-
+export default function GenreList({selectedGenre, onSelectGenre }: Props) {
   const { data, isLoading, error } = useGenres();
   if (error) return null;
 
@@ -22,13 +21,14 @@ export default function GenreList({ onSelectGenre }: Props) {
     <List>
       {data.map((genre) => (
         <ListItem key={genre.id}>
-          <HStack gap={4} display="flex" height={50} borderRadius={5}>
+          <HStack  gap={4} display="flex" height={50} borderRadius={5}>
             <Image
               boxSize={"30px"}
               borderRadius={5}
               src={genre.image_background}
             />
             <Button
+              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               fontSize={"large"}
               variant={"link"}
               onClick={() => onSelectGenre(genre)}>
