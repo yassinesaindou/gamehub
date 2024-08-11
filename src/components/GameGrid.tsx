@@ -13,8 +13,10 @@ export default function GameGrid() {
       {error && <Text>{error}</Text>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={5}
-        padding={10}>
+        spacing={3}
+        placeItems={"center"}
+        padding={5}
+        >
         {isLoading &&
           skeletons.map((skeleton) => <GameCardSkeleton key={skeleton}/>)}
         {data?.map((game) => (
