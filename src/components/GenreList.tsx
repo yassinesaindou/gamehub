@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   HStack,
   Image,
   List,
@@ -18,6 +19,8 @@ export default function GenreList({selectedGenre, onSelectGenre }: Props) {
 
   if (isLoading) return <Spinner />;
   return (
+    <>
+      <Heading fontSize={'2xl'} marginBottom={3}>Genres</Heading>
     <List>
       {data.map((genre) => (
         <ListItem key={genre.id}>
@@ -26,8 +29,11 @@ export default function GenreList({selectedGenre, onSelectGenre }: Props) {
               boxSize={"30px"}
               borderRadius={5}
               src={genre.image_background}
-            />
+              />
             <Button
+              textAlign={"left"}
+              whiteSpace={"normal"}
+               
               fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               fontSize={"large"}
               variant={"link"}
@@ -38,5 +44,6 @@ export default function GenreList({selectedGenre, onSelectGenre }: Props) {
         </ListItem>
       ))}
     </List>
+                </>
   );
 }
