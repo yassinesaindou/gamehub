@@ -14,7 +14,6 @@ export default function GameCard({ game }: Props) {
       <Card>
         <Image src={game.background_image} />
         <CardBody>
-          <Heading fontSize={"2xl"}>{game.name}</Heading>
           <HStack
             display={"flex"}
             justifyContent={"space-between"}
@@ -25,6 +24,7 @@ export default function GameCard({ game }: Props) {
             />
             <CrtiticScore score={game.metacritic} />
           </HStack>
+          <Heading fontSize={"2xl"}>{game.name}</Heading>
         </CardBody>
       </Card>
     </GameCardContainer>
