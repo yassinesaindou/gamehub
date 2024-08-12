@@ -24,7 +24,7 @@ export default function GameGrid({gameQuery}:Props) {
         padding={5}>
         {isLoading &&
           skeletons.map((skeleton) => <GameCardSkeleton key={skeleton} />)}
-        {data?.map((game) => (
+        {!isLoading && data?.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
       </SimpleGrid>
