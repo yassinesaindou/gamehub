@@ -7,7 +7,7 @@ import GameCardSkeleton from "./GameCardSkeleton";
 
 interface Props {
   gameQuery: GameQuery
-}
+} 
 
 
 export default function GameGrid({gameQuery}:Props) {
