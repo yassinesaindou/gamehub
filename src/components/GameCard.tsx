@@ -6,7 +6,6 @@ import GameCardContainer from "./GameCardContainer";
 import Emoji from "./Emoji";
 
 interface Props {
-  
   game: Game;
 }
 export default function GameCard({ game }: Props) {

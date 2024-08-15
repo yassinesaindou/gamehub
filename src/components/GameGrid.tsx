@@ -16,7 +16,7 @@ export default function GameGrid({gameQuery}:Props) {
 
   return (
     <Fragment>
-      {error && <Text>{error}</Text>}
+      {error && <Text>{error.message }</Text>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         spacing={3}
@@ -24,7 +24,7 @@ export default function GameGrid({gameQuery}:Props) {
         padding={5}>
         {isLoading &&
           skeletons.map((skeleton) => <GameCardSkeleton key={skeleton} />)}
-        {!isLoading && data?.map((game) => (
+        {!isLoading && data?.results.map((game) => (
           <GameCard key={game.id} game={game} />
         ))}
       </SimpleGrid>
