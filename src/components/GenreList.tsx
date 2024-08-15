@@ -22,7 +22,7 @@ export default function GenreList({selectedGenre, onSelectGenre }: Props) {
     <>
       <Heading fontSize={'2xl'} marginBottom={3}>Genres</Heading>
     <List>
-      {data.map((genre) => (
+      {data?.results.map((genre) => (
         <ListItem key={genre.id}>
           <HStack  gap={4} display="flex" height={50} borderRadius={5}>
             <Image
