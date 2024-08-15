@@ -7,16 +7,13 @@ import {
   ListItem,
   Spinner,
 } from "@chakra-ui/react";
-import useGenres, { Genre } from "../hooks/useGenre";
+import useGenres, { Genre } from "../hooks/useGenres";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
   selectedGenreId?: number;
 }
-export default function GenreList({
-  selectedGenreId,
-  onSelectGenre,
-}: Props) {
+export default function GenreList({ selectedGenreId, onSelectGenre }: Props) {
   const { data, isLoading, error } = useGenres();
   if (error) return null;
 
@@ -38,7 +35,7 @@ export default function GenreList({
               <Button
                 textAlign={"left"}
                 whiteSpace={"normal"}
-                fontWeight={genre.id === selectedGenreId? "bold" : "normal"}
+                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
                 fontSize={"large"}
                 variant={"link"}
                 onClick={() => onSelectGenre(genre)}>
