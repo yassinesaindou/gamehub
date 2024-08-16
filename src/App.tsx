@@ -9,15 +9,9 @@ import SortSelector from "./components/SortSelector";
 
 import GameHeading from "./components/GameHeading";
 
-export interface GameQuery {
-  genreId?: number;
-  platformId?: number;
-  sortOrder: string;
-  searchText: string;
-}
-export default function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
+export default function App() {
+   
   return (
     <Grid
       templateAreas={{
@@ -30,34 +24,25 @@ export default function App() {
       }}>
       <GridItem area={"nav"}>
         <NavBar
-          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+           
         />
       </GridItem>
       <Show above="lg">
         <GridItem area={"aside"} padding={"10px"}>
           <GenreList
-            selectedGenreId={gameQuery.genreId}
-            onSelectGenre={(genre) =>
-              setGameQuery({ ...gameQuery, genreId: genre.id })
-            }
+           
           />
         </GridItem>
       </Show>
       <GridItem area={"main"}>
-        <GameHeading gameQuery={gameQuery} />
+        <GameHeading />
         <PlatformSelector
-          selectedPlatformId={gameQuery.platformId}
-          onSelectPlatform={(platform) =>
-            setGameQuery({ ...gameQuery, platformId: platform.id })
-          }
+          
         />
         <SortSelector
-          sortOrder={gameQuery.sortOrder}
-          onSelectSortOrder={(sortOrder) =>
-            setGameQuery({ ...gameQuery, sortOrder })
-          }
+           
         />
-        <GameGrid gameQuery={gameQuery} />
+        <GameGrid   />
       </GridItem>
     </Grid>
   );
