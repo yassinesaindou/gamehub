@@ -1,4 +1,4 @@
-import { Spinner } from "@chakra-ui/react";
+import { Box, Heading, Spinner } from "@chakra-ui/react";
 import useTrailers from "../hooks/useTrailers";
 
 interface Props {
@@ -13,6 +13,10 @@ export default function GameTrailer({ gameId }: Props) {
   if (!first) return null;
 
   return (
-    <video controls src={first?.data[480]} poster={first?.preview}></video>
+    <Box marginTop={10}>
+      <Heading  marginBottom={5} as="h3">Game Trailer</Heading>
+
+      <video controls src={first?.data[480]} poster={first?.preview}></video>
+    </Box>
   );
 }
