@@ -6,7 +6,11 @@ interface Props {
 }
 export default function GameCardContainer({ children }: Props) {
   return (
-    <Box borderRadius={10} minWidth={"300px"} overflow="hidden">
+    <Box
+      _hover={{ transform: "scale(1.02)", transition: "0.15s" }}
+      borderRadius={10}
+      minWidth={"300px"}
+      overflow="hidden">
       {children}
     </Box>
   );

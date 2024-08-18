@@ -6,6 +6,7 @@ import { Platform } from "./usePlatforms";
 const apiClient = new APIClient<Game>("/games");
 export interface Game {
   id: number;
+  slug: string;
   metacritic: number;
   name: string;
   background_image: string;
